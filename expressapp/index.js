@@ -17,11 +17,7 @@ app.use(bodyParser.json());
 
 // PostgreSQL connection
 const pool = new Pool({
-  user: 'a',
-  host: 'localhost',
-  database: 'my_portfolio_dev',
-  password: '12345',
-  port: 5432,  // Default PostgreSQL port
+  connectionString: process.env.CONN
 });
 
 pool.connect((err) => {
